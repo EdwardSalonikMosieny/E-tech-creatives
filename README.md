@@ -8,7 +8,7 @@ Premium responsive static website for E-TECH CREATIVES.
 - `style.css` - responsive styling, layout, animations, and visual system
 - `script.js` - mobile menu, sticky header, scroll reveal, form validation, and back-to-top behavior
 - `assets/logo/e-tech-logo.jpeg` - logo copied from the original asset
-- `assets/images/` - local hero and portfolio placeholder images
+- `assets/images/` - local hero and service images
 - `assets/icons/` - ready for future icon assets
 
 ## How to Open
