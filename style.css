@@ -1777,3 +1777,74 @@ h3 {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Simplified hero and portfolio. */
+section[id] { scroll-margin-top: 84px; }
+.site-header:not(.scrolled):not(.menu-active) .brand,
+.site-header:not(.scrolled):not(.menu-active) .nav-menu { color: var(--white); }
+.hero.hero-simple {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 160px 0 100px;
+  background: linear-gradient(120deg, #061A4A, #0A3555);
+}
+.hero-simple::before, .hero-simple::after { content: none; }
+.hero-simple .hero-copy {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  animation: none;
+}
+.hero-simple h1 {
+  max-width: none;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.15;
+}
+.hero-simple h1 span { color: #7ED2FF; background: none; text-shadow: none; }
+.hero-simple .hero-text {
+  max-width: 480px;
+  margin: 24px auto 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.hero-simple .hero-actions { justify-content: center; margin-top: 32px; }
+.hero-simple .btn { min-height: 52px; padding: 0 26px; font-size: 0.94rem; text-transform: none; }
+.portfolio { background: var(--soft); }
+.portfolio .section-heading > p:last-child,
+.portfolio-details > p:last-child { color: var(--muted); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.portfolio-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.portfolio-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: var(--light-blue);
+  border-bottom: 1px solid var(--line);
+  color: #537699;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+.portfolio-details { padding: 26px; }
+.portfolio-status {
+  margin: 0 0 12px;
+  color: #35618B;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.portfolio-details h3 { font-size: 1.3rem; }
+.portfolio-details > p:last-child { margin-bottom: 0; }
+@media (max-width: 860px) {
+  .site-header:not(.scrolled):not(.menu-active) .nav-menu { color: var(--navy); }
+  .portfolio-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .hero.hero-simple { min-height: auto; padding: 140px 0 76px; }
+}
