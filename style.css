@@ -1846,3 +1846,10 @@ section[id] { scroll-margin-top: 84px; }
 .portfolio-card:hover, .portfolio-card:focus-within { border-color: var(--blue); box-shadow: var(--shadow); }
 .portfolio-link:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; }
 .portfolio-visit { display: inline-flex; gap: 8px; margin-top: 20px; color: #005FDC; font-weight: 700; }
+
+.portfolio-more { margin-top: 28px; }
+.portfolio-more[hidden] { display: none; }
+.portfolio-actions { margin-top: 32px; text-align: center; }
+.portfolio-actions button { cursor: pointer; }
+
+.portfolio-more { scroll-margin-top: 100px; }
