@@ -115,7 +115,7 @@ portfolioToggle.addEventListener("click", () => {
   const expanded = portfolioToggle.getAttribute("aria-expanded") === "true";
   portfolioMore.hidden = expanded;
   portfolioToggle.setAttribute("aria-expanded", String(!expanded));
-  portfolioToggle.textContent = expanded ? "View all projects" : "Show fewer projects";
+  portfolioToggle.textContent = expanded ? "View projects" : "Show fewer projects";
   if (!expanded) {
     portfolioMore.querySelector("a").focus({ preventScroll: true });
     portfolioMore.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
