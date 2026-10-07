@@ -66,7 +66,7 @@ function markInvalid(field, invalid) {
   field.classList.toggle("is-invalid", invalid);
 }
 
-contactForm.addEventListener("submit", (event) => {
+contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const fields = Array.from(contactForm.querySelectorAll("input, select, textarea"));
@@ -103,7 +103,7 @@ contactForm.addEventListener("submit", (event) => {
   }, 5200);
 });
 
-contactForm.querySelectorAll("input, select, textarea").forEach((field) => {
+contactForm?.querySelectorAll("input, select, textarea").forEach((field) => {
   field.addEventListener("input", () => {
     markInvalid(field, false);
   });
@@ -111,7 +111,7 @@ contactForm.querySelectorAll("input, select, textarea").forEach((field) => {
 
 const portfolioToggle = document.getElementById("portfolioToggle");
 const portfolioMore = document.getElementById("portfolioMore");
-portfolioToggle.addEventListener("click", () => {
+portfolioToggle?.addEventListener("click", () => {
   const expanded = portfolioToggle.getAttribute("aria-expanded") === "true";
   portfolioMore.hidden = expanded;
   portfolioToggle.setAttribute("aria-expanded", String(!expanded));

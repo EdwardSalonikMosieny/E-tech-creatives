@@ -1853,3 +1853,9 @@ section[id] { scroll-margin-top: 84px; }
 .portfolio-actions button { cursor: pointer; }
 
 .portfolio-more { scroll-margin-top: 100px; }
+
+.about-story-link { justify-self: start; }
+.founder-story { max-width: 800px; }
+.founder-story h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.founder-story > p:not(.eyebrow) { color: var(--muted); font-size: 1.1rem; }
+.founder-role { font-weight: 700; }
