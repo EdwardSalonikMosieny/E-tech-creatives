@@ -33,18 +33,22 @@ if (sculpture) {
   function draw(time = 0) {
     frame = 0;
     if (!ctx || !width || !height) return;
-    if (lastTime && !motion.matches) phase += Math.min(time - lastTime, 40) * 0.00013;
+    if (lastTime && !motion.matches) phase += Math.min(time - lastTime, 80) * 0.00048;
     lastTime = time;
     const scroll = motion.matches ? 0 : Math.min(window.scrollY / hero.offsetHeight, 1);
-    const angle = -0.4 + phase + scroll * 0.6;
-    const tilt = 0.95 + Math.sin(phase) * 0.13;
+    const angle = -0.4 + phase + scroll * 1.4;
+    const tilt = 0.85 + Math.sin(phase * 0.85) * 0.55;
+    const roll = -0.25 + Math.sin(phase * 0.65) * 0.35;
     const rotate = ([x,y,z]) => {
       const a = x * Math.cos(angle) + z * Math.sin(angle), b = z * Math.cos(angle) - x * Math.sin(angle);
-      return [a * 0.94 - y * 0.34, (y * 0.94 + a * 0.34) * Math.cos(tilt) - b * Math.sin(tilt), (y * 0.94 + a * 0.34) * Math.sin(tilt) + b * Math.cos(tilt)];
+      const x2 = a * Math.cos(roll) - y * Math.sin(roll), y2 = y * Math.cos(roll) + a * Math.sin(roll);
+      return [x2, y2 * Math.cos(tilt) - b * Math.sin(tilt), y2 * Math.sin(tilt) + b * Math.cos(tilt)];
     };
     const points = mesh.map(r => r.map(rotate));
-    const scale = Math.min(width, height) * 0.155;
-    const project = ([x,y,z]) => { const p = 9 / (9-z); return [width * 0.52 + x*scale*p, height * 0.49 + y*scale*p]; };
+    const scale = Math.min(width, height) * 0.112;
+    const depth = Math.sin(phase * 1.1) * 0.55;
+    const float = Math.sin(phase * 1.3) * height * 0.025;
+    const project = ([x,y,z]) => { const p = 7 / (7-z-depth); return [width * 0.5 + x*scale*p, height * 0.5 + y*scale*p + float]; };
     const faces = [];
     for (let i = 0; i < 160; i++) for (let j = 0; j < 24; j++) {
       const vertices = [points[i][j], points[i+1][j], points[i+1][j+1], points[i][j+1]];

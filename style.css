@@ -1880,7 +1880,7 @@ section[id] { scroll-margin-top: 84px; }
 .hero-immersive .btn-primary:hover { background: #d7ecff; }
 .hero-work-link { display: inline-flex; align-items: center; gap: 18px; font-size: 0.83rem; border-bottom: 1px solid #5d6878; padding: 10px 0; }
 .hero-work-link:hover { color: #9ecfff; }
-.hero-art { position: absolute; inset: 5% -14% 0 28%; pointer-events: none; opacity: 0.95; }
+.hero-art { position: absolute; inset: 8% -20% 5% 30%; pointer-events: none; opacity: 0.95; }
 .hero-art canvas { width: 100%; height: 100%; display: block; }
 .hero-art-caption { position: absolute; right: 0; bottom: 140px; display: flex; flex-direction: column; gap: 5px; padding-left: 13px; border-left: 1px solid #6293bd; color: #89a3ba; font-size: 0.57rem; letter-spacing: 0.17em; }
 .hero-bottom { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid #ffffff20; padding-top: 24px; color: #8e9baa; font-size: 0.58rem; letter-spacing: 0.1em; }
@@ -1888,23 +1888,27 @@ section[id] { scroll-margin-top: 84px; }
 .hero-immersive a:focus-visible { outline: 2px solid #b6dbff; outline-offset: 6px; }
 body:has(.hero-immersive) .site-header:not(.scrolled):not(.menu-active) { background: linear-gradient(#06090fe6, #06090f00); }
 @media (max-width: 860px) {
-  .hero.hero-immersive { min-height: 850px; }
-  .hero-stage { justify-content: flex-start; padding-top: 145px; }
-  .hero-art { inset: 31% -30% 0 10%; opacity: 0.7; }
-  .hero-immersive h1 { font-size: clamp(3.5rem, 10.5vw, 6rem); }
-  .hero-art-caption { bottom: 110px; }
+  .hero.hero-immersive { min-height: 100svh; }
+  .hero-stage { justify-content: flex-start; padding-top: 120px; padding-bottom: 24px; text-align: center; }
+  .hero-intro { justify-content: center; margin-bottom: 24px; }
+  .hero-immersive .hero-copy { width: 100%; }
+  .hero-immersive h1 { font-size: clamp(3rem, 10vw, 5.6rem); }
+  .hero-immersive .hero-text { margin: 22px auto 0; max-width: 420px; }
+  .hero-immersive .hero-actions { justify-content: center; }
+  .hero-art { position: relative; inset: auto; width: 100%; height: clamp(280px, 55vw, 390px); flex-shrink: 0; opacity: 1; margin: 10px auto 0; }
+  .hero-art-caption { position: static; border: 0; padding: 0; margin: -8px 0 25px; font-size: 0.5rem; }
+  .hero-bottom { position: static; margin-top: auto; padding-top: 18px; width: 100%; text-align: left; }
   .hero-bottom > span:last-child { display: none; }
 }
 @media (max-width: 540px) {
-  .hero.hero-immersive { min-height: 880px; }
-  .hero-stage { padding-top: 125px; }
-  .hero-intro { max-width: 270px; font-size: 0.65rem; margin-bottom: 26px; }
-  .hero-immersive h1 { font-size: clamp(2.9rem, 12vw, 4.5rem); }
-  .hero-immersive .hero-text { max-width: 310px; font-size: 0.9rem; margin-top: 24px; }
-  .hero-immersive .hero-actions { flex-direction: row; align-items: center; gap: 12px 22px; margin-top: 22px; }
-  .hero-immersive .btn { width: auto; }
-  .hero-art { inset: 46% -38% 4% -28%; opacity: 0.9; }
-  .hero-art-caption { bottom: 104px; font-size: 0.5rem; }
-  .hero-bottom { font-size: 0.48rem; gap: 14px; }
+  .hero-stage { padding-top: 105px; }
+  .hero-intro { align-self: center; max-width: 280px; font-size: 0.63rem; margin-bottom: 22px; }
+  .hero-immersive h1 { font-size: clamp(2.65rem, 11.6vw, 4.5rem); }
+  .hero-immersive .hero-text { max-width: 310px; font-size: 0.88rem; margin-top: 20px; line-height: 1.65; }
+  .hero-immersive .hero-actions { flex-direction: column; align-items: center; gap: 6px; margin-top: 22px; }
+  .hero-immersive .btn { width: min(100%, 290px); }
+  .hero-work-link { min-height: 44px; }
+  .hero-art { height: clamp(245px, 68vw, 340px); margin-top: 0; }
+  .hero-bottom { font-size: 0.47rem; gap: 14px; }
   .hero-bottom a { font-size: 0.65rem; gap: 10px; }
 }
